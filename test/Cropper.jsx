@@ -1,10 +1,12 @@
 import { useRef, useState } from "react";
-import "react-image-crop/dist/ReactCrop.css";
 
 import ReactCrop, { centerCrop, makeAspectCrop } from "react-image-crop";
-import { useDebounceEffect } from "../../hooks/useDebounceEffect";
-import { canvasPreview } from "../../lib/canvasPreview";
+import { canvasPreview } from "./canvasPreview";
+import { useDebounceEffect } from "./useDebounceEffect";
 
+import "react-image-crop/dist/ReactCrop.css";
+
+// This is to demonstrate how to make and center a % aspect crop
 function centerAspectCrop(mediaWidth, mediaHeight, aspect) {
   return centerCrop(
     makeAspectCrop(
@@ -21,7 +23,7 @@ function centerAspectCrop(mediaWidth, mediaHeight, aspect) {
   );
 }
 
-function ImageCropper() {
+export default function App() {
   const [imgSrc, setImgSrc] = useState("");
   const previewCanvasRef = useRef(null);
   const imgRef = useRef(null);
@@ -35,7 +37,7 @@ function ImageCropper() {
 
   function onSelectFile(e) {
     if (e.target.files && e.target.files.length > 0) {
-      setCrop(null);
+      setCrop(null); // Makes crop preview update between images.
       const reader = new FileReader();
       reader.addEventListener("load", () =>
         setImgSrc(reader.result?.toString() || "")
@@ -91,8 +93,6 @@ function ImageCropper() {
       URL.revokeObjectURL(blobUrlRef.current);
     }
     blobUrlRef.current = URL.createObjectURL(blob);
-
-    console.log(blobUrlRef.current);
 
     if (hiddenAnchorRef.current) {
       hiddenAnchorRef.current.href = blobUrlRef.current;
@@ -223,5 +223,3 @@ function ImageCropper() {
     </div>
   );
 }
-
-export default ImageCropper;

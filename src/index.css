@@ -55,4 +55,132 @@
   .active_item {
     @apply relative after:absolute after:content-[''] after:bottom-0 after:left-0 after:h-[3px] after:bg-blue-500 after:rounded-full after:w-full;
   }
+
+  .table {
+    @apply w-full border border-l-0 rounded-lg border-spacing-0 border-separate border-neutral-200;
+  }
+
+  .table_head {
+    @apply table-header-group align-middle border-inherit border-separate;
+  }
+
+  .table_row {
+    @apply table-row align-[inherit] border-inherit;
+  }
+
+  .table_th {
+    @apply px-4 py-2.5 align-middle border-l whitespace-nowrap border-neutral-200 text-sm font-semibold text-black-700;
+  }
+
+  .table_td {
+    @apply truncate px-4 py-2.5 align-middle first:border-l border-t border-neutral-200 text-sm  text-black-700 text-center;
+  }
+
+  .table_border_td {
+    @apply px-4 py-2.5 align-middle border-l border-t border-neutral-200 text-sm  text-black-700 text-center;
+  }
+
+  .table_outline_td {
+    @apply px-4 py-2.5 text-center border-b border-neutral-200 last:border-b-0 text-sm font-normal !leading-[1.4] text-black-700;
+  }
+
+  .rdp-root {
+    --rdp-today-color: #2e4141 !important;
+    --rdp-selected-border: 2px solid #fff !important;
+    --rdp-font-family: "Inter", sans-serif !important;
+  }
+
+  /* months full container */
+  .rdp-months {
+    @apply !max-w-full;
+  }
+
+  /* month */
+  .rdp-month {
+    @apply !w-full;
+  }
+
+  /*  */
+  .rdp-month_grid {
+    @apply !w-full;
+  }
+
+  /* navigation container */
+  .rdp-nav {
+    @apply !justify-between !w-full;
+  }
+
+  /* chevron */
+  .rdp-chevron {
+    @apply !fill-text-600 !w-6 !h-6;
+  }
+
+  /* main title */
+  .rdp-month_caption {
+    @apply !mb-6 !text-neutral-900 !justify-center !text-2xl;
+  }
+
+  /* week container */
+  .rdp-weekdays {
+    @apply !text-neutral-900;
+  }
+
+  /* single week name */
+  .rdp-weekday {
+    font-family: "Inter", sans-serif;
+    @apply !text-neutral-600 !opacity-100 !text-xs;
+  }
+
+  /* day color */
+  .rdp-day {
+    @apply !text-neutral-600 !text-center !text-xs;
+  }
+
+  /* today */
+  .rdp-today {
+    font-family: "Inter", sans-serif;
+  }
+
+  .non-selectable-datePicker .rdp-today {
+    @apply !text-secondary-500 !font-bold;
+  }
+
+  /* outside of months */
+  .rdp-outside {
+    @apply !text-neutral-300;
+  }
+
+  /* inside day container -> the button */
+  .rdp-day_button {
+    @apply !w-full !cursor-default;
+  }
+
+  /* non selectable or clickable */
+  .non-clickable-daypicker .rdp-day {
+    pointer-events: none; /* Disable click events */
+    cursor: default; /* Change the cursor to default */
+  }
+
+  /* ================================= */
+  .dayPickerCustom .rdp-today {
+    @apply !text-neutral-600 !font-normal;
+  }
+
+  .dayPickerCustom .rdp-day_button {
+    @apply !border-none !outline-none;
+  }
+
+  /* Custom selected date background */
+  .dayPickerCustom .rdp-selected {
+    @apply !bg-red-400 !text-white !rounded-full !font-bold;
+  }
+
+  /* non selectable calender today design */
+  .non-selectable-datePicker .rdp-today {
+    @apply !text-white !flex !items-center !justify-center !w-full;
+  }
+
+  .non-selectable-datePicker .rdp-today .rdp-day_button {
+    @apply !bg-red-400 !w-[22px] !h-[22px] !rounded-full;
+  }
 }

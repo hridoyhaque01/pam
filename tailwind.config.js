@@ -4,6 +4,7 @@ export default {
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
     "node_modules/preline/dist/*.js",
+    "./node_modules/tailwind-datepicker-react/dist/**/*.js",
   ],
   theme: {
     extend: {
@@ -18,6 +19,7 @@ export default {
       colors: {
         white: {
           DEFAULT: "#fff",
+          100: "#F5F5F5",
         },
         main: {
           DEFAULT: "#FAF9FF",
@@ -30,7 +32,7 @@ export default {
           600: "#CDC9FF",
         },
         neutral: {
-          100: "C9C9CE",
+          50: "#EEEEEE",
           200: "#D1D1D1",
           300: "#AEAEAE",
           400: "#9E9E9E",
@@ -62,7 +64,24 @@ export default {
           500: "#ECBB5E",
           "04": "rgba(245, 255, 146, 0.40)",
         },
-
+        green: {
+          DEFAULT: "#1EC96B",
+          msg: "#23C385",
+          yellow: "#FF647C",
+          success: "#2CC672",
+          dark: "#FE9E41",
+          low: "#F8CE67",
+          100: "#b7fbd4",
+          200: "#B5F3D1",
+          300: "#D3EFDF",
+          400: "#D9F8E6",
+          500: "#46E28C",
+          600: "#009543",
+          700: "#1BB287",
+          800: "#45B26B",
+          10: "rgba(30, 201, 107, 0.10)",
+          20: "rgba(30, 201, 107, 0.20)",
+        },
         error: {
           400: "#FF6B6B",
         },
@@ -102,6 +121,7 @@ export default {
       backgroundImage: {},
     },
   },
+  darkMode: "class",
   plugins: [require("preline/plugin"), require("daisyui")],
   daisyui: {
     themes: ["light"],
